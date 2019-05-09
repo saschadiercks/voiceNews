@@ -26,6 +26,7 @@
 	$dataUrl = 'data/data.json';					// Set the url to retrieve the data from
 	$jsonContent = file_get_contents($dataUrl);		// Get the data
 	$json = json_decode($jsonContent, true);		// (true) returns the json as array-structure
+	$headline = $json['headline'];					// set the title for the article
 	$content = $json['feeds'];					// Get content of json-array directly (used to ease extension of the json later (header, footer...))
 	$blacklist = $json['blacklist'];				// get Blacklist array
 
@@ -50,7 +51,13 @@
 		return $blacklist;
 	}
 
+	// get the headline
+	function getHeadline($headline) {
+		return $headline;
+	}
+
 	// calls
 	$channelItems = getChannelItems($content);
 	$blacklistItems = getBlacklistItems($blacklist);
+	$articleHeadline = getHeadline($headline);
 ?>

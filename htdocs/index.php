@@ -204,7 +204,7 @@
 
 		<!-- output -->
 		<article>
-			<h1>Das war heute los!</h1>
+			<h1><?php echo $articleHeadline; ?></h1>
 			<?php
 				$feedItems = getFeed($content);
 				$feedItems = filterFeed($feedItems);

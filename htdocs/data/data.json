@@ -1,4 +1,5 @@
 {
+	"headline": "Das war heute los!",
 	"feeds":[
 		"http://www.tagesschau.de/xml/rss2",
 		"http://newsfeed.zeit.de/politik/index",
