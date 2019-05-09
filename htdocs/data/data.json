@@ -1,9 +1,9 @@
 {
-	"headline": "Das war heute los!",
+	"headline": "This happened today",
 	"feeds":[
-		"http://www.tagesschau.de/xml/rss2",
-		"http://newsfeed.zeit.de/politik/index",
-		"http://www.spiegel.de/schlagzeilen/tops/index.rss"
+		"https://www.theverge.com/rss/index.xml",
+		"https://www.engadget.com/rss.xml",
+		"http://feeds.macrumors.com/MacRumors-All"
 	],
 	"blacklist": {
 		"_comment" : "blacklistitems,separated by comma. search for url/",
