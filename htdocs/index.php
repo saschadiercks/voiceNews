@@ -183,17 +183,10 @@
 					// output if part of feedItemTitle is in blacklist
 				} else {
 					// standard ouput of feed
+					echo '<hr/>';
 					echo '<section id="ts-' . $feedItem['itemTimestamp'] . '" data-count="' . $feedItemCount . '" data-ts="' . $feedItem['itemTimestamp'] .'">';	// add timestamp to use as anchor for unread news
-					//echo 	'<div>';
-					//echo 		'<a href="' . $feedItem['itemAuthorLink'] . '" class="icon" rel="noopener" target="pn-blank"><img src="' . $feedItem['itemAuthorIcon'] . '" alt="' . $feedItem['itemAuthorDescription'] . '" height="128" width="128" /></a>';
-					//echo 	'</div>';
-					//echo		'<header>';
-					echo			'<h2 class="title">'. $feedItem['itemTitle'] .'.</h2>';
-					//echo			'<p class="info"><span class="date">' . $feedItem['itemDate'] . '</span> / <a href="' . $feedItem['itemAuthorLink'] . '" class="source">' . $feedItem['itemAuthorDescription'] . '</a></p>';
-					//echo		'</header>';
-					echo		'<p class="excerpt">' . $feedItem['itemDescription'] . '</p>';
-					//echo	'<div>';
-					//echo	'</div>';
+					echo	'<h2 class="title">'. $feedItem['itemTitle'] .'.</h2>';
+					echo	'<p class="excerpt">' . $feedItem['itemDescription'] . '</p>';
 					echo '</section>';
 					$feedItemCount++;
 				}
