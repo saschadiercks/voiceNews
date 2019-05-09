@@ -1,6 +1,7 @@
 # VoiceNews
 Make Sir read your News.
 Add your feeds to `/data/data.json` and configure a blacklist there. Deploy `htdocs`and add a Siri shortcut to open that URL and read it out.
+"Open `src/Artikel vorlesen.shortcut`on your iPhone, modify the URL and you're done."
 
 
 ## Infos for local development
