@@ -1,16 +1,16 @@
 <?php
 
 	// Project Title
-	$projectTitle = 'personalNews';
-	$projectTitleSub = 'your news as a timeline';
+	$projectTitle = 'voiceNews';
+	$projectTitleSub = 'your newsfeds to be read byy your digital assistant';
 	$projectDescription = $projectTitle . ' | ' . $projectTitleSub;
 	$projectKeywords = 'news, timeline, newsstream';
 	$projectLanguage = 'de';					// langugage of your content (see: http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
 	$projectDirection = 'ltr';					// Reading direction ltr || rtl
 
 	// Application-Settings (mobile)
-	$serveAsApplication = TRUE;					// allow running as standalone application (TRUE || FALSE)
-	$applicationName = 'personalNews';
+	$serveAsApplication = FALSE;					// allow running as standalone application (TRUE || FALSE)
+	$applicationName = 'pvoiceNewsNews';
 	$applicationNameShort = $applicationName;
 
 	// Set Environemt
@@ -26,13 +26,8 @@
 	$dataUrl = 'data/data.json';					// Set the url to retrieve the data from
 	$jsonContent = file_get_contents($dataUrl);		// Get the data
 	$json = json_decode($jsonContent, true);		// (true) returns the json as array-structure
-	$content = $json['content'];					// Get content of json-array directly (used to ease extension of the json later (header, footer...))
+	$content = $json['feeds'];					// Get content of json-array directly (used to ease extension of the json later (header, footer...))
 	$blacklist = $json['blacklist'];				// get Blacklist array
-
-	// Set themes
-	$themeLight = 'light';
-	$themeDark = 'dark';
-	$themeDefault = $themeDark;
 
 	// size to shortenText
 	$itemDescriptionLength = 300;
@@ -53,14 +48,6 @@
 	function getBlacklistItems($blacklist) {
 		$blacklist = explode(',', $blacklist['keywords']);
 		return $blacklist;
-	}
-
-	// get theme from session
-	session_start();
-	if(!empty($_SESSION['theme'])) {
-		$theme = $_SESSION['theme'];
-	} else {
-		$theme = $themeDefault;
 	}
 
 	// calls
