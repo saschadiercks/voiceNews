@@ -183,12 +183,16 @@
 					// output if part of feedItemTitle is in blacklist
 				} else {
 					// standard ouput of feed
-					echo '<hr/>';
-					echo '<section id="ts-' . $feedItem['itemTimestamp'] . '" data-count="' . $feedItemCount . '" data-ts="' . $feedItem['itemTimestamp'] .'">';	// add timestamp to use as anchor for unread news
-					echo	'<h2 class="title">'. $feedItem['itemTitle'] .'.</h2>';
-					echo	'<p class="excerpt">' . $feedItem['itemDescription'] . '</p>';
-					echo '</section>';
-					$feedItemCount++;
+					$feedItemDayOfYear = date("z",$feedItem['itemTimestamp']);
+
+					// onlyshow items from current day
+					if($feedItemDayOfYear === date("z")) {
+						echo '<section>';
+						echo	'<h2>'. $feedItem['itemTitle'] . '.</h2>';
+						echo	'<p>' . $feedItem['itemDescription'] . '</p>';
+						echo '</section>';
+						$feedItemCount++;
+					}
 				}
 			}
 		}
